@@ -504,4 +504,4 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/virtualenv
 
 # End of https://www.toptal.com/developers/gitignore/api/python,webstorm,jupyternotebooks,macos,visualstudiocode,windows,pycharm,pythonvanilla,pydev,circuitpython
-!database/lib
+!websocket_service/lib
