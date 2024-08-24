@@ -12,6 +12,6 @@ async def socket(websocket: WebSocket, channel: str):
     websocket_service.add_subscriber(client)
 
     while True:
-        data = await websocket.receive_text()
-        await websocket_service.broadcast({"message": "Hello World"}, [client])
+        data = await websocket.receive_json()
+        await websocket_service.broadcast({"message": data}, [client])
 
