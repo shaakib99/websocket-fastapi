@@ -20,6 +20,9 @@ class WebSocketService(WebsocketServiceABC):
     
     def remove_subscriber(self, subscriber: SubscriberABC):
         self.subscribers.remove(subscriber)
+        
+        if len(self.subscribers) == 0:
+            del WebSocketService.connection_manager[self.channel]
     
     async def broadcast(self, message: dict, exclude: list[SubscriberABC] = []):
         for subscriber in self.subscribers:
